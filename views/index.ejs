@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danh sách lớp</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Danh sách lớp </h1>
+    <a href="/form-add"><button>Thêm lớp</button></a>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>NUMBER STUDENT</th>
+        <th>DATE TIME</th>
+        <TH>GENDER</TH>
+        <th>HOME TOWN</th>
+        <th>ACTION</th>
+      </tr>
+      <% lops.forEach(item => { %>
+      <tr>
+        <td> <%= item._id %></td>
+        <td> <%= item.name %></td>
+        <td> <%= item.numberStudent %></td>
+        <td> <%= item.dateTime %></td>
+        <td> <%= item.gender %></td>
+        <td> <%= item.homeTown %></td>
+        <td style="background-color: #c7c6c6;"><a href="/form-update/<%= item._id %>">Update   |</a><a href="/form-delete/<%= item._id %>">   Delete</a></td>
+      
+      </tr>
+      <% }) %> 
+
+        
+    </table>
+  </body>
+</html>
